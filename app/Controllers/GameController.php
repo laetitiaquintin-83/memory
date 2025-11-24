@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Core\BaseController;
 use App\Models\Card;
 use Core\Database;
+use App\Models\score;
 
 class GameController extends BaseController
 {
@@ -137,14 +138,8 @@ class GameController extends BaseController
 
         $idUtilisateur = $_SESSION['user']['id'] ?? 1;
 
-        $db = Database::getPdo();
-
-        $sql = "INSERT INTO scores (id_utilisateur, temps, nombre_paires, date_creation) VALUES (?, ?, ?, NOW())";
-
-        $stmt = $db->prepare($sql);
-
-        $stmt->execute([$idUtilisateur, $tempsFormatSQL, $nbPaires]);
-
+        $scoreModel = new Score();
+        $scoreModel->save($idUtilisateur, $tempsFormatSQL, nbPaires);
 
         unset($_SESSION['jeu']);
         unset($_SESSION['debut_partie']);
@@ -155,4 +150,13 @@ class GameController extends BaseController
             'paires' => $nbPaires
         ]);
     }
+public function classement()
+{
+    $scoreModel = new Score();
+     
+    $scores = $scoreModel->getBestScores();
+
+    $this->render('game/classement',['scores'=> $scores]);
+}
+   
 }
