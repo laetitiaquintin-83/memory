@@ -11,7 +11,7 @@ for ($i = 0;  $i < count($jeu); $i++) {
         <img src="<?= $carte->getImage() ?>" alt ="Image du memory">
 
         <?php else: ?>
-            <a href="play?i=<?= $i ?>">
+            <a href="/game/play?i=<?= $i ?>">
                 <div class="dos"></div>
         </a>
         <?php endif; ?>

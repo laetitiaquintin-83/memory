@@ -25,10 +25,11 @@ function esc($string)
     return escape($string);
 }
 
-/**
- * Génère une URL absolue
- */
-function url($path = '') {}
+
+function url($path = '') {
+    $baseUrl = $_ENV['APP_URL'] ?? 'http://localhost';
+    return rtrim($baseUrl, '/') . '/' . ltrim($path, '/');
+}
 
 /**
  * Génère un token CSRF

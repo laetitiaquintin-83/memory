@@ -139,7 +139,7 @@ class GameController extends BaseController
         $idUtilisateur = $_SESSION['user']['id'] ?? 1;
 
         $scoreModel = new Score();
-        $scoreModel->save($idUtilisateur, $tempsFormatSQL, nbPaires);
+        $scoreModel->save($idUtilisateur, $tempsFormatSQL, $nbPaires);
 
         unset($_SESSION['jeu']);
         unset($_SESSION['debut_partie']);

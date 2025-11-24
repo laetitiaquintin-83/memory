@@ -37,7 +37,7 @@ class score
         {
             $sql = "SELECT scores.*, utilisateurs.login
             FROM scores
-            JOIN utilisateurs ON scores.id_utilisateurs = utilisateurs.id
+            JOIN utilisateurs ON scores.id_utilisateur = utilisateurs.id
             ORDER BY temps ASC, nombre_paires DESC
             LIMIT 10";
 

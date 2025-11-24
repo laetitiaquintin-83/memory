@@ -30,6 +30,7 @@
     <a href="/articles">Articles</a> |
      <a href="/game">game</a> |
      <a href="/game/plateau">gameplateau</a> |
+      <a href="/game/classement">Classement</a> |
   
   </nav>
 
