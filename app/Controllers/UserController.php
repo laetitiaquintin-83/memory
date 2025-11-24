@@ -31,7 +31,7 @@ class UserController extends BaseController
                 header("Location:/login");
                 exit();
             }
-            $this->render('auth/registrer');
+            $this->render('auth/register');
         }
 
             public function login()
