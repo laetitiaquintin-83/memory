@@ -11,7 +11,7 @@ class GameController extends BaseController {
         // Si le joueur à cliqué sur jouer Soumission du formulaire
         if (is_post()) {
             //sécurisation de l'entrée utilisateur
-            $nbPaires = Intval (post ('nombre-paires'));
+            $nbPaires = intval (post ('nombre-paires'));
             $deck = [];
 
             //Création du paquet de cartes
@@ -114,6 +114,38 @@ class GameController extends BaseController {
 
     header("Location: /game/plateau");
     exit();
+}
+public function bravo()
+{
+    if (!isset($_SESSION['jeu']) || !isset($_SESSION['debut_partie'])){
+        header("Location: /game");
+        exit();
+    }
+
+    $fin = time();
+    $debut = $_SESSION['debut partie'];
+    $dureeEnSecondes = $fin - $debut;
+
+    $tempsFormatSQL = gmdate("H:i:s", $dureeEnSecondes);
+
+   $nbPaires = $_SESSION['nb_paires'];
+    $idUtilisateur = $_SESSION['user']['id'] ?? 1;
+
+    $db = new \Core\Database();
+
+    $sql = "INSERT INTO scores (id_utilisateur, temps, nombre_paires, date_creation) VALUES (?, ?, ?, NOW())";
+
+    $db->query($sql, [$idUtilisateur, $tempsFormatSQL, $nbPaires]);
+
+    unset($_SESSION['jeu']);
+    unset($_SESSION['debut_partie']);
+    unset($_SESSION['nb_paires']);
+
+    $this->render('game/bravo', [
+        'temps' => $tempsFormatSQL,
+        'paires' =>$nbPaires
+    ]);
+  
 }
 
 }
