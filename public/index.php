@@ -21,24 +21,27 @@ $router = new Router();
 // Définition des routes de l'application
 // La route "/" pointe vers la méthode "index" du contrôleur HomeController
 $router->get('/', 'App\\Controllers\\HomeController@index');
+
 $router->get('/game', 'App\\Controllers\\GameController@index');
 $router->post('/game', 'App\\Controllers\\GameController@index');
 $router->get('/game/plateau', 'App\\Controllers\\GameController@plateau');
 $router->get('/game/play', 'App\\Controllers\\GameController@play');
 $router->get('/game/classement', 'App\\Controllers\\GameController@classement');
 $router->get('/game/bravo', 'App\\Controllers\\GameController@bravo');
-$router->get('/about', 'App\\Controllers\\HomeController@about');
+
+
 $router->get('/auth/register', 'App\\Controllers\\UserController@register');
 $router->post('/auth/register', 'App\\Controllers\\UserController@register');
+
 $router->get('/auth/login', 'App\\Controllers\\UserController@login');
 $router->post('/auth/login', 'App\\Controllers\\UserController@login');
 
 
-$router->get('/game/play', 'App\\Controllers\\GameController@play');
-$router->get('/game/classement', 'App\\Controllers\\GameController@classement');
 
+$router->get('/logout', 'App\\Controllers\\GameController@logout');
+$router->post('/logout', 'App\\Controllers\\GameController@logout');
 // La route "/articles" pointe vers la méthode "index" du contrôleur ArticleController
-$router->get('/articles', 'App\\Controllers\\ArticleController@index');
+
 
 // Exécution du routeur :
 // On analyse l'URI et la méthode HTTP pour appeler le contrôleur et la méthode correspondants

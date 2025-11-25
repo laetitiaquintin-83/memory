@@ -27,8 +27,7 @@
   <!-- Menu de navigation global -->
   <nav>
     <a href="/">Accueil</a> |
-    <a href="/articles">Articles</a> |
-     <a href="/game">game</a> |
+         <a href="/game">game</a> |
      <a href="/game/plateau">gameplateau</a> |
       <a href="/game/classement">Classement</a> |
       <a href="/auth/register">S'inscrire</a> |
