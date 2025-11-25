@@ -43,5 +43,32 @@ class score
 
             return Database::query($sql)->fetchAll();//Appel à la statique
         }
-    
+
+        public function getUserHistory($idUtilisateur)
+        {
+            $pdo = Database::getPdo();
+
+            $sql = "SELECT * FROM scores
+            WHERE id_utilisateur = ?
+            ORDER BY date_creation DESC";
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$idUtilisateur]);
+
+            return $stmt->fetchAll();
+        }
+        public function getUserBest($idUtilisateur)
+        {
+        $pdo = Database::getPdo();
+
+        $sql = "SELECT MIN (temps) as meilleur_temps
+        FROM scores
+        WHERE id_utilisateur = ?";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$idUtilisateur]);
+
+        return $stmt->fetch();
+
+        }
 }

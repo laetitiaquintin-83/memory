@@ -37,6 +37,8 @@ $router->get('/auth/login', 'App\\Controllers\\UserController@login');
 $router->post('/auth/login', 'App\\Controllers\\UserController@login');
 
 
+$router->get('/auth/profile', 'App\\Controllers\\UserController@profile');
+$router->post('/auth/profile', 'App\\Controllers\\UserController@profile');
 
 $router->get('/logout', 'App\\Controllers\\GameController@logout');
 $router->post('/logout', 'App\\Controllers\\GameController@logout');
