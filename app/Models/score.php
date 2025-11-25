@@ -61,7 +61,7 @@ class score
         {
         $pdo = Database::getPdo();
 
-        $sql = "SELECT MIN (temps) as meilleur_temps
+        $sql = "SELECT MIN(temps) as meilleur_temps
         FROM scores
         WHERE id_utilisateur = ?";
 
