@@ -40,8 +40,8 @@ $router->post('/auth/login', 'App\\Controllers\\UserController@login');
 $router->get('/auth/profile', 'App\\Controllers\\UserController@profile');
 $router->post('/auth/profile', 'App\\Controllers\\UserController@profile');
 
-$router->get('/logout', 'App\\Controllers\\GameController@logout');
-$router->post('/logout', 'App\\Controllers\\GameController@logout');
+$router->get('/auth/logout', 'App\\Controllers\\UserController@logout');
+
 // La route "/articles" pointe vers la méthode "index" du contrôleur ArticleController
 
 

@@ -118,7 +118,7 @@ class UserController extends BaseController
             $_SESSION['user']['nom'] = $nom;
             $_SESSION['user']['prenom'] = $prenom;
 
-            $message = "Profil mis à jour avec succès !";
+            set_flash('success', 'Profil mis à jour avec succès !');
         }
 
         // 3. Récupération des données fraîches de l'utilisateur
