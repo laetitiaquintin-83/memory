@@ -5,7 +5,7 @@ namespace App\Controllers;
 use Core\BaseController;
 use App\Models\Card;
 use Core\Database;
-use App\Models\score;
+use App\Models\Score;
 
 class GameController extends BaseController
 {
