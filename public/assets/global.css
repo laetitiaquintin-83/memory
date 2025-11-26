@@ -911,3 +911,117 @@ footer {
         text-align: center;
     }
 }
+
+/* ====================================
+   PAGE GALERIE
+   ==================================== */
+
+.galerie-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(26, 26, 46, 0.85);
+    border-radius: 20px;
+    border: 3px solid #c9a227;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.galerie-container h1 {
+    color: #c9a227;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.galerie-container .subtitle {
+    color: #e8e8e8;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.galerie-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.galerie-card {
+    background: rgba(22, 33, 62, 0.8);
+    border-radius: 15px;
+    border: 2px solid #c9a227;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.galerie-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+    border-color: #f4d03f;
+}
+
+.card-image {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.galerie-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-label {
+    background: rgba(201, 162, 39, 0.2);
+    padding: 12px;
+    border-top: 1px solid rgba(201, 162, 39, 0.3);
+}
+
+.card-label span {
+    color: #c9a227;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.galerie-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Responsive galerie */
+@media (max-width: 900px) {
+    .galerie-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .galerie-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .galerie-container {
+        margin: 20px;
+        padding: 25px;
+    }
+    
+    .galerie-actions {
+        flex-direction: column;
+    }
+}

@@ -33,10 +33,12 @@
       <a href="/">🏠 Accueil</a>
       <?php if (isset($_SESSION['user'])): ?>
         <a href="/game">🎮 Jouer</a>
+        <a href="/game/galerie">🎴 Galerie</a>
         <a href="/game/classement">🏆 Classement</a>
         <a href="/auth/profile">👤 Mon Profil</a>
         <a href="/auth/logout">🚪 Déconnexion</a>
       <?php else: ?>
+        <a href="/game/galerie">🎴 Galerie</a>
         <a href="/auth/register">📝 S'inscrire</a>
         <a href="/auth/login">🔐 Se connecter</a>
       <?php endif; ?>

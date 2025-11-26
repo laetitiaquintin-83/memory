@@ -28,6 +28,7 @@ $router->get('/game/plateau', 'App\\Controllers\\GameController@plateau');
 $router->get('/game/play', 'App\\Controllers\\GameController@play');
 $router->get('/game/classement', 'App\\Controllers\\GameController@classement');
 $router->get('/game/bravo', 'App\\Controllers\\GameController@bravo');
+$router->get('/game/galerie', 'App\\Controllers\\GameController@galerie');
 
 
 $router->get('/auth/register', 'App\\Controllers\\UserController@register');

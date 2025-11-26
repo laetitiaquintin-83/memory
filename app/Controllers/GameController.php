@@ -164,5 +164,20 @@ public function classement()
 
     $this->render('game/classement',['scores'=> $scores]);
 }
+
+public function galerie()
+{
+    // Récupérer toutes les images des cartes (1 à 12)
+    $cartes = [];
+    for ($i = 1; $i <= 12; $i++) {
+        $cartes[] = [
+            'id' => $i,
+            'image' => "/assets/images/cards/" . $i . ".jpg",
+            'nom' => "Carte " . $i
+        ];
+    }
+    
+    $this->render('game/galerie', ['cartes' => $cartes]);
+}
    
 }
