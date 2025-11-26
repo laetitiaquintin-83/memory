@@ -3,7 +3,7 @@
     <p class="subtitle">Découvrez toutes les cartes du Monde Parallèle</p>
 
     <?php foreach ($galerie as $themeId => $theme): ?>
-        <div class="theme-section">
+        <div class="theme-section theme-<?= $themeId ?>">
             <h2 class="theme-title"><?= $theme['nom'] ?></h2>
             <div class="galerie-grid">
                 <?php foreach ($theme['cartes'] as $carte): ?>
