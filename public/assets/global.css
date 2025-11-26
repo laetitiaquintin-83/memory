@@ -5,6 +5,195 @@ body {
     /* Dégradé inspiré du dos de carte - tons bleu/violet profonds */
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     min-height: 100vh;
+    transition: background 0.5s ease;
+}
+
+/* ====================================
+   THÈMES - FONDS
+   ==================================== */
+
+/* Thème Médiéval (par défaut) */
+body.theme-medieval {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 50%, rgba(15, 52, 96, 0.9) 100%),
+                url('/assets/images/cards/chateau.jpg') center/cover fixed;
+}
+
+/* Thème Disney */
+body.theme-disney {
+    background: linear-gradient(135deg, rgba(75, 0, 130, 0.85) 0%, rgba(138, 43, 226, 0.8) 50%, rgba(255, 105, 180, 0.75) 100%),
+                url('/assets/images/cards/disney.jpg') center/cover fixed;
+}
+
+body.theme-disney nav {
+    background: rgba(75, 0, 130, 0.95);
+    border-bottom-color: #ff69b4;
+}
+
+body.theme-disney nav a,
+body.theme-disney .nav-brand .logo,
+body.theme-disney .welcome-user {
+    color: #ff69b4;
+}
+
+body.theme-disney nav a:hover,
+body.theme-disney .nav-brand .logo:hover {
+    color: #ffb6c1;
+    background: rgba(255, 105, 180, 0.2);
+}
+
+body.theme-disney footer {
+    background: rgba(75, 0, 130, 0.95);
+    border-top-color: #ff69b4;
+}
+
+body.theme-disney .home-container,
+body.theme-disney .form-group select,
+body.theme-disney .btn-play,
+body.theme-disney .btn-classement {
+    border-color: #ff69b4;
+}
+
+body.theme-disney .home-container h1,
+body.theme-disney .form-group label {
+    color: #ff69b4;
+}
+
+body.theme-disney .btn-play {
+    background: linear-gradient(135deg, #ff69b4, #da70d6);
+}
+
+body.theme-disney .btn-play:hover {
+    background: linear-gradient(135deg, #ff85c1, #ee82ee);
+}
+
+/* Styles Disney pour le plateau de jeu */
+body.theme-disney .progress-container {
+    background: rgba(75, 0, 130, 0.5);
+    border-color: #ff69b4;
+}
+
+body.theme-disney .progress-bar {
+    background: linear-gradient(90deg, #ff69b4, #da70d6, #ee82ee);
+}
+
+body.theme-disney .info-bar {
+    background: rgba(75, 0, 130, 0.8);
+}
+
+body.theme-disney .carte-conteneur {
+    border-color: #ff69b4;
+}
+
+body.theme-disney .carte-conteneur:hover {
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+}
+
+body.theme-disney .carte-conteneur.trouvee {
+    border-color: #da70d6;
+    box-shadow: 0 0 20px rgba(218, 112, 214, 0.5);
+}
+
+body.theme-disney .preview-message {
+    background: rgba(75, 0, 130, 0.95);
+    border-color: #ff69b4;
+}
+
+body.theme-disney .preview-message span {
+    color: #ff69b4;
+}
+
+body.theme-disney #preview-countdown {
+    color: #ffb6c1;
+}
+
+/* ====================================
+   THÈME BISOUNOURS
+   ==================================== */
+
+body.theme-bisounours {
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.9) 0%, rgba(135, 206, 250, 0.85) 50%, rgba(255, 218, 185, 0.9) 100%),
+                url('/assets/images/cards/bisounours.jpg') center/cover fixed;
+}
+
+body.theme-bisounours nav {
+    background: rgba(255, 182, 193, 0.95);
+    border-bottom-color: #ff69b4;
+}
+
+body.theme-bisounours nav a,
+body.theme-bisounours .nav-brand .logo,
+body.theme-bisounours .welcome-user {
+    color: #d63384;
+}
+
+body.theme-bisounours nav a:hover,
+body.theme-bisounours .nav-brand .logo:hover {
+    color: #ff69b4;
+    background: rgba(255, 105, 180, 0.2);
+}
+
+body.theme-bisounours footer {
+    background: rgba(255, 182, 193, 0.95);
+    border-top-color: #ff69b4;
+}
+
+body.theme-bisounours .home-container,
+body.theme-bisounours .form-group select,
+body.theme-bisounours .btn-play,
+body.theme-bisounours .btn-classement {
+    border-color: #ff69b4;
+}
+
+body.theme-bisounours .home-container h1,
+body.theme-bisounours .form-group label {
+    color: #d63384;
+}
+
+body.theme-bisounours .btn-play {
+    background: linear-gradient(135deg, #ff69b4, #87ceeb);
+}
+
+body.theme-bisounours .btn-play:hover {
+    background: linear-gradient(135deg, #ff85c1, #add8e6);
+}
+
+body.theme-bisounours .progress-container {
+    background: rgba(255, 182, 193, 0.5);
+    border-color: #ff69b4;
+}
+
+body.theme-bisounours .progress-bar {
+    background: linear-gradient(90deg, #ff69b4, #87ceeb, #ffdab9);
+}
+
+body.theme-bisounours .info-bar {
+    background: rgba(255, 182, 193, 0.8);
+}
+
+body.theme-bisounours .carte-conteneur {
+    border-color: #ff69b4;
+}
+
+body.theme-bisounours .carte-conteneur:hover {
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+}
+
+body.theme-bisounours .carte-conteneur.trouvee {
+    border-color: #87ceeb;
+    box-shadow: 0 0 20px rgba(135, 206, 250, 0.5);
+}
+
+body.theme-bisounours .preview-message {
+    background: rgba(255, 182, 193, 0.95);
+    border-color: #ff69b4;
+}
+
+body.theme-bisounours .preview-message span {
+    color: #d63384;
+}
+
+body.theme-bisounours #preview-countdown {
+    color: #ff69b4;
 }
 
 nav {
@@ -1005,6 +1194,20 @@ footer {
     color: #e8e8e8;
     font-size: 1.1rem;
     margin-bottom: 40px;
+}
+
+/* Section par thème */
+.theme-section {
+    margin-bottom: 50px;
+}
+
+.theme-title {
+    color: #c9a227;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(201, 162, 39, 0.3);
 }
 
 .galerie-grid {

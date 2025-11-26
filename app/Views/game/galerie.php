@@ -1,19 +1,24 @@
 <div class="galerie-container">
     <h1>🎴 Galerie des Cartes</h1>
-    <p class="subtitle">Découvrez toutes les cartes du jeu Memory Medieval</p>
+    <p class="subtitle">Découvrez toutes les cartes du Monde Parallèle</p>
 
-    <div class="galerie-grid">
-        <?php foreach ($cartes as $carte): ?>
-            <div class="galerie-card">
-                <div class="card-image">
-                    <img src="<?= $carte['image'] ?>" alt="<?= $carte['nom'] ?>">
-                </div>
-                <div class="card-label">
-                    <span><?= $carte['nom'] ?></span>
-                </div>
+    <?php foreach ($galerie as $themeId => $theme): ?>
+        <div class="theme-section">
+            <h2 class="theme-title"><?= $theme['nom'] ?></h2>
+            <div class="galerie-grid">
+                <?php foreach ($theme['cartes'] as $carte): ?>
+                    <div class="galerie-card">
+                        <div class="card-image">
+                            <img src="<?= $carte['image'] ?>" alt="<?= $carte['nom'] ?>">
+                        </div>
+                        <div class="card-label">
+                            <span><?= $carte['nom'] ?></span>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
-        <?php endforeach; ?>
-    </div>
+        </div>
+    <?php endforeach; ?>
 
     <div class="galerie-actions">
         <a href="/game" class="btn btn-primary">🎮 Jouer maintenant</a>

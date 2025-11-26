@@ -14,11 +14,22 @@ class GameController extends BaseController
         if (is_post()) {
 
             $nbPaires = intval(post('nombre_paires'));
+            $theme = post('theme') ?? 'medieval';
             $deck = [];
-        // 
+
+            // Définir le décalage selon le thème
+            // Princesse : cartes 1-12, Amis de Mickey : cartes 13-24, Bisounours : cartes 25-36
+            if ($theme === 'bisounours') {
+                $offset = 24;
+            } elseif ($theme === 'disney') {
+                $offset = 12;
+            } else {
+                $offset = 0;
+            }
 
             for ($c = 1; $c <= $nbPaires; $c++) {
-                $image = "/assets/images/cards/" . $c  . ".jpg";
+                $imageNum = $c + $offset;
+                $image = "/assets/images/cards/" . $imageNum . ".jpg";
 
                 $carte1 = new Card($c, $image);
                 $carte2 = new Card($c, $image);
@@ -29,6 +40,7 @@ class GameController extends BaseController
 
             shuffle($deck);
             $_SESSION['jeu'] = $deck;
+            $_SESSION['theme'] = $theme;
 
             // --- 🆕 AJOUTS POUR LE SCORE ---
             // On lance le chrono (heure actuelle en secondes)
@@ -187,17 +199,30 @@ public function classement()
 
 public function galerie()
 {
-    // Récupérer toutes les images des cartes (1 à 12)
-    $cartes = [];
-    for ($i = 1; $i <= 12; $i++) {
-        $cartes[] = [
-            'id' => $i,
-            'image' => "/assets/images/cards/" . $i . ".jpg",
-            'nom' => "Carte " . $i
+    // Récupérer toutes les images des cartes des deux thèmes
+    $themes = [
+        'medieval' => ['nom' => '👸 Princesse', 'debut' => 1, 'fin' => 12],
+        'disney' => ['nom' => '🐭 Amis de Mickey', 'debut' => 13, 'fin' => 24],
+        'bisounours' => ['nom' => '🐻 Bisounours', 'debut' => 25, 'fin' => 36]
+    ];
+    
+    $galerie = [];
+    foreach ($themes as $themeId => $theme) {
+        $cartes = [];
+        for ($i = $theme['debut']; $i <= $theme['fin']; $i++) {
+            $cartes[] = [
+                'id' => $i,
+                'image' => "/assets/images/cards/" . $i . ".jpg",
+                'nom' => "Carte " . $i
+            ];
+        }
+        $galerie[$themeId] = [
+            'nom' => $theme['nom'],
+            'cartes' => $cartes
         ];
     }
     
-    $this->render('game/galerie', ['cartes' => $cartes]);
+    $this->render('game/galerie', ['galerie' => $galerie]);
 }
    
 }

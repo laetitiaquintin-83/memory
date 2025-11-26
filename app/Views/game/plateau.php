@@ -17,6 +17,9 @@ if ($nbCartes <= 6) {
     $classeGrille = 'grille-6';
 }
 
+// Thème actuel
+$theme = $_SESSION['theme'] ?? 'medieval';
+
 // Préparer les données des cartes pour JavaScript
 $cartesData = [];
 foreach ($jeu as $i => $carte) {
@@ -27,6 +30,9 @@ foreach ($jeu as $i => $carte) {
     ];
 }
 ?>
+
+<!-- Script pour appliquer le thème au body -->
+<script>document.body.classList.add('theme-<?= $theme ?>');</script>
 
 <div class="game-container">
 
@@ -64,7 +70,15 @@ foreach ($jeu as $i => $carte) {
              data-image="<?= $carte->getImage() ?>">
             <div class="carte-inner">
                 <div class="carte-face carte-dos">
-                    <img src="/assets/images/cards/dos.jpg" alt="dos de carte" class="carte-img">
+                    <?php 
+                    $dosImage = 'dos.jpg';
+                    if (($theme ?? 'medieval') === 'disney') {
+                        $dosImage = 'dosdisney.jpg';
+                    } elseif (($theme ?? 'medieval') === 'bisounours') {
+                        $dosImage = 'dosbisounours.jpg';
+                    }
+                    ?>
+                    <img src="/assets/images/cards/<?= $dosImage ?>" alt="dos de carte" class="carte-img">
                 </div>
                 <div class="carte-face carte-front">
                     <img src="<?= $carte->getImage() ?>" alt="Carte Memory" class="carte-img">

@@ -1,9 +1,18 @@
 <div class="home-container">
-    <h1>🏰 Memory</h1>
+    <h1>🌀 Monde Parallèle</h1>
     <p class="subtitle">Prêt à tester votre mémoire ?</p>
 
     <form action="/game" method="POST">
         <input type="hidden" name="csrf_token" value="<?= csrf_token() ?>">
+
+        <div class="form-group">
+            <label for="theme">Choisissez un thème :</label>
+            <select name="theme" id="theme" onchange="changeTheme(this.value)">
+                <option value="medieval" selected>👸 Princesse</option>
+                <option value="disney">🐭 Amis de Mickey</option>
+                <option value="bisounours">🐻 Bisounours</option>
+            </select>
+        </div>
 
         <div class="form-group">
             <label for="nb_paires">Niveau de difficulté :</label>
@@ -20,3 +29,20 @@
 
     <a href="/game/classement" class="btn-classement">Voir les meilleurs scores</a>
 </div>
+
+<script>
+function changeTheme(theme) {
+    document.body.classList.remove('theme-medieval', 'theme-disney', 'theme-bisounours');
+    document.body.classList.add('theme-' + theme);
+    
+    // Changer aussi le titre
+    const h1 = document.querySelector('.home-container h1');
+    if (theme === 'disney') {
+        h1.textContent = '🐭 Monde Parallèle - Amis de Mickey';
+    } else if (theme === 'bisounours') {
+        h1.textContent = '🐻 Monde Parallèle - Bisounours';
+    } else {
+        h1.textContent = '👸 Monde Parallèle - Princesse';
+    }
+}
+</script>
