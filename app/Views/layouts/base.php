@@ -34,7 +34,7 @@
      <a href="/game/classement">Classement</a> |
       <a href="/auth/profile">Mon profil</a> |
       <a href="/auth/logout" class="#"> Déconnexion</a>
-      <span class="welcome-user">&#128273; Bienvenue, <?= esc($_SESSION['user']['login']) ?></span>
+      <span class="welcome-user">👑 Bienvenue, <?= esc($_SESSION['user']['login']) ?></span>
       <?php else: ?>
        <a href="/auth/register">S'inscrire</a> |
       <a href="/auth/login">Se connecter</a> |

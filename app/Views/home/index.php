@@ -5,7 +5,7 @@
 ?>
 <div class="page-home">
     <div class="home-container">
-        <h1>🃏 Bienvenue sur Memory</h1>
+        <h1>🏰 Bienvenue sur Memory</h1>
         <p class="subtitle">Le jeu de mémoire classique</p>
         
         <p>Testez votre mémoire en retrouvant les paires de cartes identiques !</p>
