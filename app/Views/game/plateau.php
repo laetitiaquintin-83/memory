@@ -32,11 +32,11 @@ $chronoAffiche = gmdate("i:s", $tempsEcoule);
                 
                 <?php else: ?>
                     <a href="/game/play?i=<?= $i ?>" style="display:block; width:100%; height:100%; text-decoration:none;">
-                        <div class="dos"></div>
+                     <img src="/assets/images/cards/dos.jpg" alt="dos de carte" ">
                     </a>
                 <?php endif; ?>
 
-            </div>
+            <!-- </div>class="carte image -->
 
         <?php 
         } // Fin de la boucle for
