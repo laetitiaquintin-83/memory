@@ -1,5 +1,5 @@
 <div class="home-container">
-    <h1>🃏 Memory</h1>
+    <h1>🏰 Memory</h1>
     <p class="subtitle">Prêt à tester votre mémoire ?</p>
 
     <form action="/game" method="POST">

@@ -26,22 +26,21 @@
 <body>
   <!-- Menu de navigation global -->
   <nav>
-    <a href="/">Accueil</a> |
-    
-<!-- //<a href="/game/plateau">gameplateau</a> | -->
-     <?php if (isset($_SESSION['user'])): ?>
-        <a href="/game">Jouer</a> |
-     <a href="/game/classement">Classement</a> |
-      <a href="/auth/profile">Mon profil</a> |
-      <a href="/auth/logout" class="#"> Déconnexion</a>
-      <span class="welcome-user">👑 Bienvenue, <?= esc($_SESSION['user']['login']) ?></span>
+    <div class="nav-links">
+      <a href="/">Accueil</a>
+      <?php if (isset($_SESSION['user'])): ?>
+        <a href="/game">Jouer</a>
+        <a href="/game/classement">Classement</a>
+        <a href="/auth/profile">Mon profil</a>
+        <a href="/auth/logout">Déconnexion</a>
       <?php else: ?>
-       <a href="/auth/register">S'inscrire</a> |
-      <a href="/auth/login">Se connecter</a> |
+        <a href="/auth/register">S'inscrire</a>
+        <a href="/auth/login">Se connecter</a>
       <?php endif; ?>
-    
-
-  
+    </div>
+    <?php if (isset($_SESSION['user'])): ?>
+      <span class="welcome-user">👑 Bienvenue, <?= esc($_SESSION['user']['login']) ?></span>
+    <?php endif; ?>
   </nav>
 
   <!-- Contenu principal injecté depuis BaseController -->
