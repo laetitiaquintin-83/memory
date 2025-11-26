@@ -13,13 +13,17 @@
          <?php endforeach; ?>
      </div>
  <?php endif; ?>
-<div style="max-width: 400px; margin: 50px auto; text-align: center;">
+
+<div class="auth-container">
     <h1>Connexion</h1>
     <form action="" method="POST">
-        <input type="text" name="login" placeholder="Login" required style="display:block; width:100%; margin:10px 0; padding:10px;">
-        <input type="password" name="password" placeholder="Mot de passe" required style="display:block; width:100%; margin:10px 0; padding:10px;">
-        
-        <button type="submit" style="padding:10px 20px; background:#3498db; color:white; border:none; cursor:pointer;">Se connecter</button>
+        <div class="form-group">
+            <input type="text" name="login" placeholder="Login" required>
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Mot de passe" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Se connecter</button>
     </form>
     <p>Pas encore de compte ? <a href="/auth/register">S'inscrire</a></p>
 </div>

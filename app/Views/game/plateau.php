@@ -4,6 +4,18 @@ $debut = $_SESSION['debut_partie'] ?? $maintenant;
 $tempsEcoule = $maintenant - $debut;
 
 $chronoAffiche = gmdate("i:s", $tempsEcoule);
+
+// Déterminer la classe de grille selon le nombre de cartes
+$nbCartes = count($jeu);
+if ($nbCartes <= 6) {
+    $classeGrille = 'grille-3'; // 3 colonnes pour 6 cartes (3 paires)
+} elseif ($nbCartes <= 12) {
+    $classeGrille = 'grille-4'; // 4 colonnes pour 12 cartes (6 paires)
+} elseif ($nbCartes <= 18) {
+    $classeGrille = 'grille-6'; // 6 colonnes pour 18 cartes (9 paires)
+} else {
+    $classeGrille = 'grille-6'; // 6 colonnes pour 24 cartes (12 paires)
+}
 ?>
 
 <div class="game-container">
@@ -19,7 +31,7 @@ $chronoAffiche = gmdate("i:s", $tempsEcoule);
 </div>
 </div>
 
-<div id="plateau-jeu">
+<div id="plateau-jeu" class="<?= $classeGrille ?>">
     <?php
     for ($i = 0; $i < count($jeu); $i++){
         $carte = $jeu[$i];

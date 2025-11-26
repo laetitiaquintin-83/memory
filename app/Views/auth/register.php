@@ -1,4 +1,3 @@
-
 <?php if (has_flash_messages('error')): ?>
      <div class="alert alert-error">
          <?php foreach (get_flash_messages('error') as $message): ?>
@@ -14,17 +13,26 @@
          <?php endforeach; ?>
      </div>
  <?php endif; ?>
- <div style="max-width: 400px; margin: 50px auto; text-align: center;">
+
+<div class="auth-container">
     <h1>Inscription</h1>
     <form action="" method="POST">
-        <input type="text" name="login" placeholder="Login" required style="display:block; width:100%; margin:10px 0; padding:10px;">
-        <input type="email" name="email" placeholder="Email" required style="display:block; width:100%; margin:10px 0; padding:10px;">
-        <input type="text" name="nom" placeholder="Nom" style="display:block; width:100%; margin:10px 0; padding:10px;">
-        <input type="text" name="prenom" placeholder="Prénom" style="display:block; width:100%; margin:10px 0; padding:10px;">
-        <input type="password" name="password" placeholder="Mot de passe" required style="display:block; width:100%; margin:10px 0; padding:10px;">
-        
-        <button type="submit" style="padding:10px 20px; background:#2ecc71; color:white; border:none; cursor:pointer;">S'inscrire</button>
+        <div class="form-group">
+            <input type="text" name="login" placeholder="Login" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="nom" placeholder="Nom">
+        </div>
+        <div class="form-group">
+            <input type="text" name="prenom" placeholder="Prénom">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Mot de passe" required>
+        </div>
+        <button type="submit" class="btn btn-success">S'inscrire</button>
     </form>
-    <p>Déjà un compte ? <a href="/auth
-    /login">Se connecter</a></p>
+    <p>Déjà un compte ? <a href="/auth/login">Se connecter</a></p>
 </div>
