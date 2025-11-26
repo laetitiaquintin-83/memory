@@ -1015,12 +1015,12 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-    
+
     .galerie-container {
         margin: 20px;
         padding: 25px;
     }
-    
+
     .galerie-actions {
         flex-direction: column;
     }
