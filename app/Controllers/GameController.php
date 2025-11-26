@@ -65,13 +65,11 @@ class GameController extends BaseController
 
         $index = get("i");
         $deck = $_SESSION['jeu'];
-        
 
-
+        // Retourner la carte cliquée
         $deck[$index]->setEstRetournee(true);
-        header("Refresh: 1; url=/game/plateau");
-                $this->render('game/plateau', ['jeu' => $deck]);
 
+        // Compter les cartes retournées (non trouvées)
         $cartesRetournees = [];
         foreach ($deck as $carte) {
             if ($carte->getEstRetournee() && !$carte->getEstTrouvee()) {
@@ -87,38 +85,60 @@ class GameController extends BaseController
                 // ✅ Paire trouvée
                 $carteA->setEstTrouvee(true);
                 $carteB->setEstTrouvee(true);
-            } else {
-                // ✅ CORRECTION : Modifier AVANT render()
-                // 1. On cache les cartes pour la prochaine fois
-                $carteA->setEstRetournee(false);
-                $carteB->setEstRetournee(false);
+                
+                // Sauvegarder et rediriger
                 $_SESSION['jeu'] = $deck;
 
-                header("Refresh: 1; url=/game/plateau");
+                // Vérification victoire
+                $toutEstTrouve = true;
+                foreach ($deck as $carte) {
+                    if (!$carte->getEstTrouvee()) {
+                        $toutEstTrouve = false;
+                        break;
+                    }
+                }
+
+                if ($toutEstTrouve) {
+                    header("Location: /game/bravo");
+                    exit();
+                }
+
+                header("Location: /game/plateau");
+                exit();
+            } else {
+                // ❌ Pas une paire - afficher les cartes puis les retourner
+                $_SESSION['jeu'] = $deck;
+                
+                // Afficher les cartes retournées avec auto-refresh après 1 seconde
+                header("Refresh: 1; url=/game/retourner");
                 $this->render('game/plateau', ['jeu' => $deck]);
-                
-                
                 exit();
             }
         }
 
-        // Sauvegarde
+        // Sauvegarde et redirection (1 seule carte retournée)
         $_SESSION['jeu'] = $deck;
+        header("Location: /game/plateau");
+        exit();
+    }
 
-        // Vérification victoire
-        $toutEstTrouve = true;
-        foreach ($deck as $carte) {
-            if (!$carte->getEstTrouvee()) {
-                $toutEstTrouve = false;
-                break;
-            }
-        }
-
-        if ($toutEstTrouve) {
-            header("Location: /game/bravo");
+    public function retourner()
+    {
+        if (!isset($_SESSION['jeu'])) {
+            header("Location: /game");
             exit();
         }
 
+        $deck = $_SESSION['jeu'];
+
+        // Retourner toutes les cartes non trouvées
+        foreach ($deck as $carte) {
+            if (!$carte->getEstTrouvee()) {
+                $carte->setEstRetournee(false);
+            }
+        }
+
+        $_SESSION['jeu'] = $deck;
         header("Location: /game/plateau");
         exit();
     }

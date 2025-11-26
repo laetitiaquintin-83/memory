@@ -65,6 +65,9 @@
       </a>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="/assets/js/effects.js"></script>
 </body>
 
 </html>
