@@ -26,7 +26,7 @@ $chronoAffiche = gmdate("i:s", $tempsEcoule);
         $classeSpeciale = $carte->getEstTrouvee() ? 'trouvee' : "";
         ?>
 
-        <div class="carte-conteneur <?= $classeSpeciale ?>
+        <div class="carte-conteneur <?= $classeSpeciale ?>">
         <?php if ($carte->getEstRetournee() || $carte->getEstTrouvee()): ?>
                     <img src="<?= $carte->getImage() ?>" alt="Carte Memory" class="carte-img">
                 

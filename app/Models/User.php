@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Core\Database;
 
-class user
+class User
 {
 
     public function create($login, $password, $email, $nom, $prenom)
@@ -55,7 +55,7 @@ class user
         if ($password){
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            $sql = "UDPATE utilisateurs
+            $sql = "UPDATE utilisateurs
             SET login = ?, email = ?, nom = ?, prenom = ?, password = ?
             WHERE id = ?";
 

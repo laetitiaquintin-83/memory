@@ -22,14 +22,14 @@
                     <?php
                     $rang= $index + 1;
                     if ($rang === 1) echo 'Vous avez gagné';
-                    elseif ($rang === 2) echo 'Vous avez fini deuxieme';
-                    elseif ($rang === 3) echo 'Vous avez fini troisieme';
+                    elseif ($rang === 2) echo 'Vous avez fini deuxième';
+                    elseif ($rang === 3) echo 'Vous avez fini troisième';
                     else echo $rang;
                     ?>
                     <td class="joueur"><?= esc($score['login'])?></td>
                     <td class="temps"><?= esc($score['temps'])?></td>
                     <td class="paires"><?= esc($score['nombre_paires'])?> paires</td>
-                    <td class="date"><?= format_date($score['date de creation'])?></td>
+                    <td class="date"><?= format_date($score['date_creation'])?></td>
                     <tr>
                         <?php endforeach;?>
                         <tbody>

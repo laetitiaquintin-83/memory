@@ -21,5 +21,5 @@
         
         <button type="submit" style="padding:10px 20px; background:#3498db; color:white; border:none; cursor:pointer;">Se connecter</button>
     </form>
-    <p>Pas encore de compte ? <a href="/register">S'inscrire</a></p>
+    <p>Pas encore de compte ? <a href="/auth/register">S'inscrire</a></p>
 </div>

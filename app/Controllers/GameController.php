@@ -64,8 +64,12 @@ class GameController extends BaseController
 
         $index = get("i");
         $deck = $_SESSION['jeu'];
+        
+
 
         $deck[$index]->setEstRetournee(true);
+        header("Refresh: 1; url=/game/plateau");
+                $this->render('game/plateau', ['jeu' => $deck]);
 
         $cartesRetournees = [];
         foreach ($deck as $carte) {
@@ -89,9 +93,10 @@ class GameController extends BaseController
                 $carteB->setEstRetournee(false);
                 $_SESSION['jeu'] = $deck;
 
-                // 2. On affiche avec refresh (utilisateur voit brièvement les cartes)
                 header("Refresh: 1; url=/game/plateau");
                 $this->render('game/plateau', ['jeu' => $deck]);
+                
+                
                 exit();
             }
         }

@@ -25,5 +25,6 @@
         
         <button type="submit" style="padding:10px 20px; background:#2ecc71; color:white; border:none; cursor:pointer;">S'inscrire</button>
     </form>
-    <p>Déjà un compte ? <a href="/login">Se connecter</a></p>
+    <p>Déjà un compte ? <a href="/auth
+    /login">Se connecter</a></p>
 </div>

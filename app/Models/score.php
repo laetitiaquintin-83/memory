@@ -5,7 +5,7 @@ namespace App\Models;
 use Core\Database;
 
 
-class score
+class Score
 {
     private $db;
 
@@ -21,7 +21,7 @@ class score
     {
         $pdo= Database::getPdo();
 
-        $sql = "INSERT INTO scores (id_utilisateurs, $temps, nombre_paires, date_creation)
+        $sql = "INSERT INTO scores (id_utilisateur, temps, nombre_paires, date_creation)
         VALUES (?, ?, ?, NOW())";
 
         $stmt = $pdo->prepare($sql);
