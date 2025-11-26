@@ -18,8 +18,10 @@ class GameController extends BaseController
             $deck = [];
 
             // Définir le décalage selon le thème
-            // Princesse : cartes 1-12, Amis de Mickey : cartes 13-24, Bisounours : cartes 25-36
-            if ($theme === 'bisounours') {
+            // Princesse : cartes 1-12, Amis de Mickey : cartes 13-24, Bisounours : cartes 25-36, Winnie : cartes 37-48
+            if ($theme === 'winnie') {
+                $offset = 36;
+            } elseif ($theme === 'bisounours') {
                 $offset = 24;
             } elseif ($theme === 'disney') {
                 $offset = 12;
@@ -203,7 +205,8 @@ public function galerie()
     $themes = [
         'medieval' => ['nom' => '👸 Princesse', 'debut' => 1, 'fin' => 12],
         'disney' => ['nom' => '🐭 Amis de Mickey', 'debut' => 13, 'fin' => 24],
-        'bisounours' => ['nom' => '🐻 Bisounours', 'debut' => 25, 'fin' => 36]
+        'bisounours' => ['nom' => '🐻 Bisounours', 'debut' => 25, 'fin' => 36],
+        'winnie' => ['nom' => '🍯 Winnie', 'debut' => 37, 'fin' => 48]
     ];
     
     $galerie = [];

@@ -11,6 +11,7 @@
                 <option value="medieval" selected>👸 Princesse</option>
                 <option value="disney">🐭 Amis de Mickey</option>
                 <option value="bisounours">🐻 Bisounours</option>
+                <option value="winnie">🍯 Winnie</option>
             </select>
         </div>
 
@@ -32,7 +33,7 @@
 
 <script>
 function changeTheme(theme) {
-    document.body.classList.remove('theme-medieval', 'theme-disney', 'theme-bisounours');
+    document.body.classList.remove('theme-medieval', 'theme-disney', 'theme-bisounours', 'theme-winnie');
     document.body.classList.add('theme-' + theme);
     
     // Changer aussi le titre
@@ -41,6 +42,8 @@ function changeTheme(theme) {
         h1.textContent = '🐭 Monde Parallèle - Amis de Mickey';
     } else if (theme === 'bisounours') {
         h1.textContent = '🐻 Monde Parallèle - Bisounours';
+    } else if (theme === 'winnie') {
+        h1.textContent = '🍯 Monde Parallèle - Winnie';
     } else {
         h1.textContent = '👸 Monde Parallèle - Princesse';
     }
