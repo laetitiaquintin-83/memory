@@ -14,7 +14,7 @@
   <meta charset="utf-8">
 
   <!-- Titre de la page (sécurisé avec htmlspecialchars, valeur par défaut si non défini) -->
-  <title><?= isset($title) ? htmlspecialchars($title, ENT_QUOTES, 'UTF-8') : 'Mini MVC' ?></title>
+  <title><?= isset($title) ? htmlspecialchars($title, ENT_QUOTES, 'UTF-8') : 'Monde Parallèle' ?></title>
 
   <!-- Bonne pratique : rendre le site responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">

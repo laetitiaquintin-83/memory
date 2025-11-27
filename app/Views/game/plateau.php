@@ -78,6 +78,12 @@ foreach ($jeu as $i => $carte) {
                         $dosImage = 'dosbisounours.jpg';
                     } elseif (($theme ?? 'medieval') === 'winnie') {
                         $dosImage = 'doswinnie.jpg';
+                    } elseif (($theme ?? 'medieval') === 'poney') {
+                        $dosImage = 'dospetitponey.jpg';
+                    } elseif (($theme ?? 'medieval') === 'hellokitty') {
+                        $dosImage = 'doshellokitty.jpg';
+                    } elseif (($theme ?? 'medieval') === 'mario') {
+                        $dosImage = 'dosmario.jpg';
                     }
                     ?>
                     <img src="/assets/images/cards/<?= $dosImage ?>" alt="dos de carte" class="carte-img">

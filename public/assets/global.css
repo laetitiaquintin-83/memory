@@ -244,7 +244,7 @@ body.theme-bisounours .carte-img {
 
 body.theme-winnie {
     background: linear-gradient(135deg, rgba(255, 193, 7, 0.9) 0%, rgba(255, 152, 0, 0.85) 50%, rgba(139, 69, 19, 0.8) 100%),
-                url('/assets/images/cards/winnie.jpg') center/cover fixed;
+        url('/assets/images/cards/winnie.jpg') center/cover fixed;
 }
 
 body.theme-winnie nav {
@@ -368,6 +368,409 @@ body.theme-winnie .carte-img {
 .theme-winnie .theme-title {
     color: #8b4513;
     border-bottom-color: rgba(255, 193, 7, 0.3);
+}
+
+/* ====================================
+   THÈME PETIT PONEY
+   ==================================== */
+
+body.theme-poney {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.9) 0%, rgba(186, 85, 211, 0.85) 50%, rgba(138, 43, 226, 0.8) 100%),
+        url('/assets/images/cards/petitponey.jpg') center/cover fixed;
+}
+
+body.theme-poney nav {
+    background: linear-gradient(90deg, rgba(255, 105, 180, 0.95), rgba(186, 85, 211, 0.95));
+    border-bottom-color: #fff;
+}
+
+body.theme-poney nav a,
+body.theme-poney .nav-brand .logo,
+body.theme-poney .welcome-user {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-poney nav a:hover,
+body.theme-poney .nav-brand .logo:hover {
+    color: #ffe4f0;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+body.theme-poney footer {
+    background: linear-gradient(90deg, rgba(255, 105, 180, 0.95), rgba(186, 85, 211, 0.95));
+    border-top-color: #fff;
+}
+
+body.theme-poney .home-container,
+body.theme-poney .form-group select,
+body.theme-poney .btn-play,
+body.theme-poney .btn-classement {
+    border-color: #ff69b4;
+}
+
+body.theme-poney .home-container h1,
+body.theme-poney .form-group label {
+    color: #9932cc;
+}
+
+body.theme-poney .btn-play {
+    background: linear-gradient(135deg, #ff69b4, #ba55d3, #8a2be2);
+}
+
+body.theme-poney .btn-play:hover {
+    background: linear-gradient(135deg, #ff85c1, #da70d6, #9370db);
+}
+
+body.theme-poney .progress-container {
+    background: rgba(186, 85, 211, 0.5);
+    border-color: #ff69b4;
+}
+
+body.theme-poney .progress-bar {
+    background: linear-gradient(90deg, #ff69b4, #ba55d3, #8a2be2, #00bfff, #00fa9a, #ffff00, #ff6347);
+}
+
+body.theme-poney .info-bar {
+    background: linear-gradient(90deg, rgba(255, 105, 180, 0.8), rgba(186, 85, 211, 0.8));
+}
+
+body.theme-poney .carte-conteneur {
+    border-color: #ff69b4;
+}
+
+body.theme-poney .carte-conteneur:hover {
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
+}
+
+body.theme-poney .carte-conteneur.trouvee {
+    border-color: #ba55d3;
+    box-shadow: 0 0 20px rgba(186, 85, 211, 0.6);
+}
+
+body.theme-poney .preview-message {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.95), rgba(186, 85, 211, 0.95));
+    border-color: #fff;
+}
+
+body.theme-poney .preview-message span {
+    color: #fff;
+}
+
+body.theme-poney #preview-countdown {
+    color: #ffe4f0;
+}
+
+/* Recadrage des images Poney - Plateau de jeu */
+body.theme-poney .carte-img {
+    object-fit: contain;
+    object-position: center center;
+    background: linear-gradient(135deg, #ffe4f0 0%, #e8d4f0 100%);
+}
+
+/* Galerie Petit Poney - Affichage amélioré */
+.theme-poney .galerie-card .card-image {
+    background: linear-gradient(135deg, #ffe4f0 0%, #e8d4f0 100%);
+    padding: 8px;
+}
+
+.theme-poney .galerie-card .card-image img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.theme-poney .galerie-card {
+    background: linear-gradient(135deg, #ff69b4 0%, #ba55d3 100%);
+    border-color: #fff;
+}
+
+.theme-poney .galerie-card:hover {
+    border-color: #ffe4f0;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
+}
+
+.theme-poney .card-label {
+    background: linear-gradient(90deg, rgba(255, 105, 180, 0.95), rgba(186, 85, 211, 0.95));
+}
+
+.theme-poney .card-label span {
+    color: #fff;
+}
+
+.theme-poney .theme-title {
+    color: #9932cc;
+    border-bottom-color: rgba(255, 105, 180, 0.3);
+}
+
+/* ====================================
+   THÈME HELLO KITTY
+   ==================================== */
+
+body.theme-hellokitty {
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.95) 0%, rgba(255, 105, 180, 0.9) 50%, rgba(255, 20, 147, 0.85) 100%),
+        url('/assets/images/cards/hellokitty.jpg') center/cover fixed;
+}
+
+body.theme-hellokitty nav {
+    background: rgba(255, 105, 180, 0.95);
+    border-bottom-color: #ff1493;
+}
+
+body.theme-hellokitty nav a,
+body.theme-hellokitty .nav-brand .logo,
+body.theme-hellokitty .welcome-user {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+body.theme-hellokitty nav a:hover,
+body.theme-hellokitty .nav-brand .logo:hover {
+    color: #fff;
+    background: rgba(255, 20, 147, 0.3);
+}
+
+body.theme-hellokitty footer {
+    background: rgba(255, 105, 180, 0.95);
+    border-top-color: #ff1493;
+}
+
+body.theme-hellokitty .home-container,
+body.theme-hellokitty .form-group select,
+body.theme-hellokitty .btn-play,
+body.theme-hellokitty .btn-classement {
+    border-color: #ff1493;
+}
+
+body.theme-hellokitty .home-container h1,
+body.theme-hellokitty .form-group label {
+    color: #ff1493;
+}
+
+body.theme-hellokitty .btn-play {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+}
+
+body.theme-hellokitty .btn-play:hover {
+    background: linear-gradient(135deg, #ff85c1, #ff69b4);
+}
+
+body.theme-hellokitty .progress-container {
+    background: rgba(255, 105, 180, 0.5);
+    border-color: #ff1493;
+}
+
+body.theme-hellokitty .progress-bar {
+    background: linear-gradient(90deg, #ff69b4, #ff1493, #ff69b4);
+}
+
+body.theme-hellokitty .info-bar {
+    background: rgba(255, 105, 180, 0.9);
+}
+
+body.theme-hellokitty .carte-conteneur {
+    border-color: #ff1493;
+}
+
+body.theme-hellokitty .carte-conteneur:hover {
+    box-shadow: 0 8px 25px rgba(255, 20, 147, 0.5);
+}
+
+body.theme-hellokitty .carte-conteneur.trouvee {
+    border-color: #ff69b4;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+}
+
+body.theme-hellokitty .preview-message {
+    background: rgba(255, 105, 180, 0.95);
+    border-color: #ff1493;
+}
+
+body.theme-hellokitty .preview-message span {
+    color: #fff;
+}
+
+body.theme-hellokitty #preview-countdown {
+    color: #fff;
+}
+
+/* Recadrage des images Hello Kitty - Plateau de jeu */
+body.theme-hellokitty .carte-img {
+    object-fit: contain;
+    object-position: center center;
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4ec 100%);
+}
+
+/* Galerie Hello Kitty - Affichage amélioré */
+.theme-hellokitty .galerie-card .card-image {
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4ec 100%);
+    padding: 8px;
+}
+
+.theme-hellokitty .galerie-card .card-image img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.theme-hellokitty .galerie-card {
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+    border-color: #fff;
+}
+
+.theme-hellokitty .galerie-card:hover {
+    border-color: #ffe4ec;
+    box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
+}
+
+.theme-hellokitty .card-label {
+    background: rgba(255, 20, 147, 0.95);
+}
+
+.theme-hellokitty .card-label span {
+    color: #fff;
+}
+
+.theme-hellokitty .theme-title {
+    color: #ff1493;
+    border-bottom-color: rgba(255, 20, 147, 0.3);
+}
+
+/* ====================================
+   THÈME MARIO
+   ==================================== */
+
+body.theme-mario {
+    background: linear-gradient(135deg, rgba(228, 0, 43, 0.9) 0%, rgba(0, 90, 156, 0.85) 50%, rgba(255, 199, 44, 0.8) 100%),
+        url('/assets/images/cards/mario.jpg') center/cover fixed;
+}
+
+body.theme-mario nav {
+    background: rgba(228, 0, 43, 0.95);
+    border-bottom-color: #ffc72c;
+}
+
+body.theme-mario nav a,
+body.theme-mario .nav-brand .logo,
+body.theme-mario .welcome-user {
+    color: #ffc72c;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-mario nav a:hover,
+body.theme-mario .nav-brand .logo:hover {
+    color: #fff;
+    background: rgba(255, 199, 44, 0.2);
+}
+
+body.theme-mario footer {
+    background: rgba(228, 0, 43, 0.95);
+    border-top-color: #ffc72c;
+}
+
+body.theme-mario .home-container,
+body.theme-mario .form-group select,
+body.theme-mario .btn-play,
+body.theme-mario .btn-classement {
+    border-color: #e4002b;
+}
+
+body.theme-mario .home-container h1,
+body.theme-mario .form-group label {
+    color: #e4002b;
+}
+
+body.theme-mario .btn-play {
+    background: linear-gradient(135deg, #e4002b, #005a9c);
+}
+
+body.theme-mario .btn-play:hover {
+    background: linear-gradient(135deg, #ff1a3d, #0073c2);
+}
+
+body.theme-mario .progress-container {
+    background: rgba(0, 90, 156, 0.5);
+    border-color: #ffc72c;
+}
+
+body.theme-mario .progress-bar {
+    background: linear-gradient(90deg, #e4002b, #ffc72c, #4caf50);
+}
+
+body.theme-mario .info-bar {
+    background: rgba(228, 0, 43, 0.9);
+}
+
+body.theme-mario .carte-conteneur {
+    border-color: #e4002b;
+}
+
+body.theme-mario .carte-conteneur:hover {
+    box-shadow: 0 8px 25px rgba(228, 0, 43, 0.5);
+}
+
+body.theme-mario .carte-conteneur.trouvee {
+    border-color: #ffc72c;
+    box-shadow: 0 0 20px rgba(255, 199, 44, 0.6);
+}
+
+body.theme-mario .preview-message {
+    background: rgba(228, 0, 43, 0.95);
+    border-color: #ffc72c;
+}
+
+body.theme-mario .preview-message span {
+    color: #ffc72c;
+}
+
+body.theme-mario #preview-countdown {
+    color: #fff;
+}
+
+/* Recadrage des images Mario - Plateau de jeu */
+body.theme-mario .carte-img {
+    object-fit: cover;
+    object-position: center center;
+}
+
+body.theme-mario .carte-front .carte-img {
+    object-fit: contain;
+    background: linear-gradient(135deg, #ffe4e8 0%, #e8f0ff 100%);
+}
+
+/* Galerie Mario - Affichage amélioré */
+.theme-mario .galerie-card .card-image {
+    background: linear-gradient(135deg, #ffe4e8 0%, #e8f0ff 100%);
+    padding: 5px;
+}
+
+.theme-mario .galerie-card .card-image img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.theme-mario .galerie-card {
+    background: linear-gradient(135deg, #e4002b 0%, #005a9c 100%);
+    border-color: #ffc72c;
+}
+
+.theme-mario .galerie-card:hover {
+    border-color: #fff;
+    box-shadow: 0 10px 30px rgba(228, 0, 43, 0.5);
+}
+
+.theme-mario .card-label {
+    background: rgba(228, 0, 43, 0.95);
+}
+
+.theme-mario .card-label span {
+    color: #ffc72c;
+}
+
+.theme-mario .theme-title {
+    color: #e4002b;
+    border-bottom-color: rgba(228, 0, 43, 0.3);
 }
 
 nav {
@@ -639,6 +1042,13 @@ main {
 
 .carte-dos {
     z-index: 2;
+}
+
+.carte-dos .carte-img {
+    object-fit: cover;
+    border-radius: 12px;
+    border: none;
+    box-shadow: none;
 }
 
 .carte-front {
@@ -1414,17 +1824,19 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
 .galerie-card:hover .card-image img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .card-label {

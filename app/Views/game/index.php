@@ -12,6 +12,9 @@
                 <option value="disney">🐭 Amis de Mickey</option>
                 <option value="bisounours">🐻 Bisounours</option>
                 <option value="winnie">🍯 Winnie</option>
+                <option value="poney">🦄 Petit Poney</option>
+                <option value="hellokitty">🎀 Hello Kitty</option>
+                <option value="mario">🍄 Mario</option>
             </select>
         </div>
 
@@ -33,7 +36,7 @@
 
 <script>
 function changeTheme(theme) {
-    document.body.classList.remove('theme-medieval', 'theme-disney', 'theme-bisounours', 'theme-winnie');
+    document.body.classList.remove('theme-medieval', 'theme-disney', 'theme-bisounours', 'theme-winnie', 'theme-poney', 'theme-hellokitty', 'theme-mario');
     document.body.classList.add('theme-' + theme);
     
     // Changer aussi le titre
@@ -44,6 +47,12 @@ function changeTheme(theme) {
         h1.textContent = '🐻 Monde Parallèle - Bisounours';
     } else if (theme === 'winnie') {
         h1.textContent = '🍯 Monde Parallèle - Winnie';
+    } else if (theme === 'poney') {
+        h1.textContent = '🦄 Monde Parallèle - Petit Poney';
+    } else if (theme === 'hellokitty') {
+        h1.textContent = '🎀 Monde Parallèle - Hello Kitty';
+    } else if (theme === 'mario') {
+        h1.textContent = '🍄 Monde Parallèle - Mario';
     } else {
         h1.textContent = '👸 Monde Parallèle - Princesse';
     }
