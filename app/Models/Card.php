@@ -48,5 +48,6 @@ class Card
     public function setEstTrouvee($valeur)
     {
         $this->estTrouvee = $valeur;
+        
     }
 }

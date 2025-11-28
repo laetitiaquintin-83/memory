@@ -30,6 +30,7 @@ $router->get('/game/retourner', 'App\\Controllers\\GameController@retourner');
 $router->get('/game/classement', 'App\\Controllers\\GameController@classement');
 $router->get('/game/bravo', 'App\\Controllers\\GameController@bravo');
 $router->get('/game/galerie', 'App\\Controllers\\GameController@galerie');
+$router->get('/game/statistiques', 'App\\Controllers\\GameController@statistiques');
 
 
 $router->get('/auth/register', 'App\\Controllers\\UserController@register');

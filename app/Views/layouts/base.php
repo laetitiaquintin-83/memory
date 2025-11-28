@@ -34,6 +34,7 @@
       <?php if (isset($_SESSION['user'])): ?>
         <a href="/game">🎮 Jouer</a>
         <a href="/game/galerie">🎴 Galerie</a>
+        <a href="/game/statistiques">📊 Stats</a>
         <a href="/game/classement">🏆 Classement</a>
         <a href="/auth/profile">👤 Mon Profil</a>
         <a href="/auth/logout">🚪 Déconnexion</a>

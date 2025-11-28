@@ -236,5 +236,24 @@ public function galerie()
     
     $this->render('game/galerie', ['galerie' => $galerie]);
 }
+
+public function statistiques()
+{
+    // Vérifier que l'utilisateur est connecté
+    if (!isset($_SESSION['user'])) {
+        header("Location: /auth/login");
+        exit();
+    }
+
+    $idUtilisateur = $_SESSION['user']['id'];
+    $scoreModel = new Score();
+    
+    $stats = $scoreModel->getUserStats($idUtilisateur);
+    
+    $this->render('game/statistiques', [
+        'stats' => $stats,
+        'user' => $_SESSION['user']
+    ]);
+}
    
 }
