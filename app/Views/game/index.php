@@ -8,7 +8,7 @@
         <div class="form-group">
             <label for="theme">Choisissez un thème :</label>
             <select name="theme" id="theme" onchange="changeTheme(this.value)">
-                <option value="medieval" selected>👸 Princesse</option>
+                <option value="princesse" selected>👸 Princesse</option>
                 <option value="disney">🐭 Amis de Mickey</option>
                 <option value="bisounours">🐻 Bisounours</option>
                 <option value="winnie">🍯 Winnie</option>
@@ -36,7 +36,7 @@
 
 <script>
 function changeTheme(theme) {
-    document.body.classList.remove('theme-medieval', 'theme-disney', 'theme-bisounours', 'theme-winnie', 'theme-poney', 'theme-hellokitty', 'theme-mario');
+    document.body.classList.remove('theme-medieval', 'theme-princesse', 'theme-disney', 'theme-bisounours', 'theme-winnie', 'theme-poney', 'theme-hellokitty', 'theme-mario');
     document.body.classList.add('theme-' + theme);
     
     // Changer aussi le titre
@@ -57,4 +57,9 @@ function changeTheme(theme) {
         h1.textContent = '👸 Monde Parallèle - Princesse';
     }
 }
+
+// Appliquer le thème par défaut au chargement
+document.addEventListener('DOMContentLoaded', function() {
+    changeTheme('princesse');
+});
 </script>
