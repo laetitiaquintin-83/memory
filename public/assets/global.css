@@ -1435,11 +1435,66 @@ button[type="submit"]:hover {
     border: 3px solid #c9a227;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .home-container h1 {
     font-size: 3rem;
     margin-bottom: 10px;
+}
+
+/* ====================================
+   CARTES FLOTTANTES
+   ==================================== */
+.floating-cards {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.floating-card {
+    position: absolute;
+    left: var(--x);
+    bottom: -150px;
+    width: 80px;
+    height: 110px;
+    animation: floatUp 15s ease-in-out infinite;
+    animation-delay: var(--delay);
+    opacity: 0.6;
+}
+
+.floating-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.6;
+    }
+
+    90% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-120vh) rotate(360deg) scale(1);
+        opacity: 0;
+    }
 }
 
 /* ====================================
@@ -1874,7 +1929,7 @@ button[type="submit"]:hover {
     .stats-cards {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .stats-container {
         padding: 20px;
     }

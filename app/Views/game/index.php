@@ -1,3 +1,13 @@
+<!-- Cartes flottantes en arrière-plan -->
+<div class="floating-cards">
+    <div class="floating-card" style="--delay: 0s; --x: 10%;"><img src="/assets/images/cards/1.jpg" alt=""></div>
+    <div class="floating-card" style="--delay: 2s; --x: 25%;"><img src="/assets/images/cards/3.jpg" alt=""></div>
+    <div class="floating-card" style="--delay: 4s; --x: 40%;"><img src="/assets/images/cards/5.jpg" alt=""></div>
+    <div class="floating-card" style="--delay: 1s; --x: 55%;"><img src="/assets/images/cards/7.jpg" alt=""></div>
+    <div class="floating-card" style="--delay: 3s; --x: 70%;"><img src="/assets/images/cards/9.jpg" alt=""></div>
+    <div class="floating-card" style="--delay: 5s; --x: 85%;"><img src="/assets/images/cards/11.jpg" alt=""></div>
+</div>
+
 <div class="home-container">
     <h1>🌀 Monde Parallèle</h1>
     <p class="subtitle">Prêt à tester votre mémoire ?</p>
@@ -56,6 +66,22 @@ function changeTheme(theme) {
     } else {
         h1.textContent = '👸 Monde Parallèle - Princesse';
     }
+    
+    // Mettre à jour les cartes flottantes
+    updateFloatingCards(theme);
+}
+
+function updateFloatingCards(theme) {
+    const offsets = {
+        princesse: 0, disney: 12, bisounours: 24, winnie: 36,
+        poney: 48, hellokitty: 60, mario: 74
+    };
+    const offset = offsets[theme] || 0;
+    const cardNums = [1, 3, 5, 7, 9, 11];
+    const floatingCards = document.querySelectorAll('.floating-card img');
+    floatingCards.forEach((card, i) => {
+        card.src = `/assets/images/cards/${offset + cardNums[i]}.jpg`;
+    });
 }
 
 // Appliquer le thème par défaut au chargement
